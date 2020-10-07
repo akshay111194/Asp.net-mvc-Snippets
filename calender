@@ -340,3 +340,43 @@ $("#evoCalendar").evoCalendar('removeCalendarEvent', eventID);
 // destroy the calendar
 
 $("#evoCalendar").evoCalendar('destroy');
+
+
+Event handlers.
+
+
+$('#evoCalendar').evoCalendar({
+
+  // options here
+
+})
+
+.on('selectDate',function(newDate, oldDate) {
+
+  // do something
+
+})
+
+.on('selectMonth',function(activeMonth, monthIndex) {
+
+  // do something
+
+})
+
+.on('selectYear',function(activeYear) {
+
+  // do something
+
+})
+
+.on('selectEvent',function(activeEvent) {
+
+  // do something
+
+})
+
+.on('destroy',function(calendar) {
+
+  // do something
+
+})

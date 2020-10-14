@@ -1,0 +1,232 @@
+How to use it:
+1. Add references to jQuery library and the jQuery DateTimePicker plugin's CSS & JS files:
+
+1
+<link rel="stylesheet" href="DateTimePicker.css">
+2
+<script src="//code.jquery.com/jquery.min.js"></script>
+3
+<script src="DateTimePicker.js"></script>
+2. Add i18n files to the webpage as per your need:
+
+1
+<script src="i18n/DateTimePicker-i18n.js"></script>
+2
+<script src="i18n/DateTimePicker-i18n-de.js"></script>
+3
+...
+3. Create input fields for the datetime picker.
+
+01
+<!-- Date Picker -->
+02
+<p>Date : </p>
+03
+<input type="date" readonly>
+04
+ 
+05
+<!-- Time Picker -->
+06
+<p>Time : </p>
+07
+<input type="time" readonly>
+08
+ 
+09
+<!-- DateTime Picker -->
+10
+<p>DateTime : </p>
+11
+<input type="datetime" readonly>
+3. For old internet explorers (IE < 9):
+
+01
+<!-- Date Picker -->
+02
+<p>Date : </p>
+03
+<input type="text" data-field="date" readonly>
+04
+ 
+05
+<!-- Time Picker -->
+06
+<p>Time : </p>
+07
+<input type="text" data-field="time" readonly>
+08
+ 
+09
+<!-- DateTime Picker -->
+10
+<p>DateTime : </p>
+11
+<input type="text" data-field="datetime" readonly>
+4. Create an empty container for the picker popup.
+
+1
+<div id="dtBox"></div>
+5. Initialize the plugin and done.
+
+1
+$("#dtBox").DateTimePicker();
+6. Full plugin options to customize the datetime picker.
+
+view source
+01
+$("#dtBox").DateTimePicker({
+02
+  mode:"date",// date, time or datetime
+03
+  defaultDate:null,
+04
+ 
+05
+  dateSeparator:"-",
+06
+  timeSeparator:":",
+07
+  timeMeridiemSeparator:" ",
+08
+  dateTimeSeparator:" ",
+09
+  monthYearSeparator:" ",
+10
+ 
+11
+  dateTimeFormat:"dd-MM-yyyy HH:mm",
+12
+  dateFormat:"dd-MM-yyyy",
+13
+  timeFormat:"HH:mm",
+14
+ 
+15
+  maxDate:null,
+16
+  minDate: null,
+17
+ 
+18
+  maxTime:null,
+19
+  minTime:null,
+20
+ 
+21
+  maxDateTime:null,
+22
+  minDateTime:null,
+23
+ 
+24
+  shortDayNames: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+25
+  fullDayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+26
+  shortMonthNames: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+27
+  fullMonthNames: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+28
+  labels:null,/*{"year": "Year", "month": "Month", "day": "Day", "hour": "Hour", "minutes": "Minutes", "seconds": "Seconds", "meridiem": "Meridiem"}*/
+29
+ 
+30
+  minuteInterval: 1,
+31
+  roundOffMinutes:true,
+32
+ 
+33
+  secondsInterval: 1,
+34
+  roundOffSeconds:true,
+35
+ 
+36
+  showHeader:true,
+37
+  titleContentDate:"Set Date",
+38
+  titleContentTime:"Set Time",
+39
+  titleContentDateTime:"Set Date & Time",
+40
+ 
+41
+  buttonsToDisplay: ["HeaderCloseButton","SetButton","ClearButton"],
+42
+  setButtonContent:"Set",
+43
+  clearButtonContent:"Clear",
+44
+  incrementButtonContent:"+",
+45
+  decrementButtonContent:"-",
+46
+  setValueInTextboxOnEveryClick:false,
+47
+  readonlyInputs:false,
+48
+ 
+49
+  animationDuration: 400,
+50
+ 
+51
+  touchHoldInterval: 300,// in Milliseconds
+52
+  captureTouchHold:false,// capture Touch Hold Event
+53
+ 
+54
+  mouseHoldInterval: 50,// in Milliseconds
+55
+  captureMouseHold:false,// capture Mouse Hold Event
+56
+ 
+57
+  isPopup:true,
+58
+  parentElement:"body",
+59
+ 
+60
+  isInline:false,
+61
+  inputElement:null,
+62
+ 
+63
+  language:"",
+64
+ 
+65
+  init:null,// init(oDateTimePicker)
+66
+  addEventHandlers:null, // addEventHandlers(oDateTimePicker)
+67
+  beforeShow:null, // beforeShow(oInputElement)
+68
+  afterShow:null, // afterShow(oInputElement)
+69
+  beforeHide:null, // beforeHide(oInputElement)
+70
+  afterHide:null, // afterHide(oInputElement)
+71
+  buttonClicked:null, // buttonClicked(sButtonType, oInputElement) where sButtonType = "SET"|"CLEAR"|"CANCEL"|"TAB"
+72
+  settingValueOfElement:null,// settingValueOfElement(sValue, dDateTime, oInputElement)
+73
+  formatHumanDate:null, // formatHumanDate(oDateTime, sMode, sFormat)
+74
+ 
+75
+  parseDateTimeString:null,// parseDateTimeString(sDateTime, sMode, sFormat, oInputField)
+76
+  formatDateTimeString:null // formatDateTimeString(oDateTime, sMode, sFormat, oInputField)
+77
+   
+78
+});
